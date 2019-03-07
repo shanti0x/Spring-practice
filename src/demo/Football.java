@@ -1,19 +1,17 @@
 package demo;
 
-public class TrackCoach implements Coach {
-public TrackCoach() {
-	
-}
+public class Football implements Coach{
+
 	@Override
 	public String getDailyWorkout() {
 		
-		return "Run a hard 5k";
+		return "Return your goal";
 	}
 
 	@Override
 	public String getDailyFortune() {
 		
-		return "Success";
+		return "Practice makes better";
 	}
 
 }

@@ -6,9 +6,32 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.wsd">
+        
+<!-- define the dependency -->
 
-    <bean id="myCoach" 
-    class="demo.BaseballCoach">   
+    <bean id="myFootballCoach" 
+    class="demo.Football">   
     </bean>
 
+    <bean id="myBaseballCoach" 
+    class="demo.BaseballCoach">   
+    </bean>
+    
+      
+     <bean id="myFortuneService" 
+    class="demo.RandomFortuneService">   
+    </bean>
+    
+       <bean id="myTrackCoach" 
+    class="demo.TrackCoach"> 
+      </bean>
+    
+       <bean id="myGolfCoach" 
+    class="demo.GolfCoach">   
+   
+    <!-- set up constructor injection -->
+ 		
+<constructor-arg ref="myFortuneService" />
+   
+    </bean>
 </beans>
