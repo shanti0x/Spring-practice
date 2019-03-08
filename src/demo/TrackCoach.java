@@ -1,9 +1,16 @@
 package demo;
 
 public class TrackCoach implements Coach {
-public TrackCoach() {
 	
+	private  FortuneService fortuneService;
+	
+	public TrackCoach(FortuneService fortuneService) {
+	super();
+	this.fortuneService = fortuneService;
 }
+	public TrackCoach() {
+		
+	}
 	@Override
 	public String getDailyWorkout() {
 		
@@ -13,7 +20,7 @@ public TrackCoach() {
 	@Override
 	public String getDailyFortune() {
 		
-		return "Success";
+		return "Just Do It: " + fortuneService.getFortune();
 	}
 
 }

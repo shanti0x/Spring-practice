@@ -11,10 +11,10 @@ public class HelloSpringApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//retrieve bean from spring container
-		Coach theCoach = context.getBean("myGolfCoach", Coach.class);
-		Coach theCoach1 = context.getBean("myBaseballCoach", Coach.class);
-		Coach theCoach2 = context.getBean("myTrackCoach", Coach.class);
-		FortuneService theFortuneService = context.getBean("myFortuneService", demo.FortuneService.class);
+		
+		Coach theCoach = context.getBean("myCoach", Coach.class);
+		
+		//FortuneService theFortuneService = context.getBean("myFortuneService", demo.FortuneService.class);
 		
 		// call methosd on the bean
 		System.out.println(theCoach.getDailyWorkout());
