@@ -9,11 +9,8 @@
         
 <!-- define the dependency -->
 
-     
-    
-      
-      
-     <bean id="myFortuneService" 
+          
+    <bean id="myFortuneService" 
     class="demo.RandomFortuneService">   
     </bean>
     
@@ -29,5 +26,16 @@
  		
 <constructor-arg ref="myFortune" />
    
+    </bean>
+    
+    <bean id="myCricketCoach"
+    class="demo.CricketCoach">
+    
+    <!-- set up for injection -->
+    <property name="fortuneService" ref="myFortuneService"/>
+    <property name="emailAddress" value="aaaa@bbbbb"/>
+    <property name="team" value="Adrian Marcu"/>
+    
+    
     </bean>
 </beans>
