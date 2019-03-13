@@ -1,0 +1,23 @@
+package demo;
+
+public class GolfCoach implements Coach{
+	private FortunateService fortunateService;
+	
+	public GolfCoach(FortunateService theFortuneService) {
+		fortunateService = theFortuneService;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		
+		return "Practice skills for 4 hours today";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		
+		return fortunateService.getFortunate();
+	}
+	
+
+}

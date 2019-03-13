@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\Dana\Eclipse projects\Spring practice\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2625023884.index
+3586289723.index
+3944021491.index
+2270901007.index
+185721499.index
