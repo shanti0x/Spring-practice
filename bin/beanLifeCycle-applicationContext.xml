@@ -7,24 +7,19 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.wsd">
       
- 
-
- 
 <!-- Define your beans here -->
 <!-- define the dependency -->
-
-          
-    <bean id="myFortuneService" 
-    class="demo.RandomFortuneService">   
-    </bean>
-    
-     <bean id="myFortune" 
+      
+   <bean id="myFortune" 
     class="demo.HappyFortuneService">   
     </bean>
         
     
     <bean id="myCoach" 
-    class="demo.TrackCoach">   
+    class="demo.TrackCoach"  
+    init-method="doMyStartupStuff"    
+    destroy-method="doMyCleanupStuffYoYo">
+    
     
     <!-- set up constructor injection -->
  		
@@ -32,14 +27,7 @@
    
     </bean>
     
-    <bean id="myCricketCoach"
-    class="demo.CricketCoach">
+   
     
-    <!-- set up for injection -->
-    <property name="fortuneService" ref="myFortuneService"/>
-    <property name="emailAddress" value="aaaaaa@gmail.com"/>
-    <property name="team" value="Manchester"/>
-    
-    
-    </bean>
+  
 </beans>

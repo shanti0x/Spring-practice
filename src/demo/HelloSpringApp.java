@@ -16,7 +16,7 @@ public class HelloSpringApp {
 		
 		//FortuneService theFortuneService = context.getBean("myFortuneService", demo.FortuneService.class);
 		
-		// call methosd on the bean
+		// call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(theCoach.getDailyFortune());
 		
