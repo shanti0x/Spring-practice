@@ -11,21 +11,27 @@
 <body>
 
 	<h2>Spring MVC Demo - Home Page</h2>
+	
+	<hr>
+	
 	<a href="hello">Plain Hello World</a>
 
-	<br>
-	<br>
+	<br><br>
 
 	<img
 		src="${pageContext.request.contextPath}/resources/images/spring-logo.png" width="107" height="98" />
 
-	<br>
-	<br>
+	<br>	<br>
 
 	<input type="button" onclick="doSomeWork()" value="Click Me" />
 
 	<hr>
-	<a href="showForm"> Hello World form</a>
+	<a href="hello/showForm"> Hello World form</a>
+	
+	<br>	<br>
+	
+	<a href="student/showForm"> Student form</a>
+	
 </body>
 
 </html>
