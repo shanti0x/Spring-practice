@@ -45,11 +45,21 @@ Last name: <form:input path="lastName" />
 		C#<form:radiobutton path="favoriteLanguage" value="C#" /> 
 		PHP<form:radiobutton path="favoriteLanguage" value="PHP" /> 
 		Ruby<form:radiobutton path="favoriteLanguage" value="Ruby" />
-		
+
 		<!-- la submit, spring va apela student.setFavoriteLanguage() -->
 
 		<br>
 		<br>
+		Operating Systems:
+		Linux <form:checkbox path="operatingSystems" value="Linux" />
+		Mac OS <form:checkbox path="operatingSystems" value="Mac OS" />
+		MS Windows <form:checkbox path="operatingSystems" value="MS Windows" />
+
+
+		<br>
+		<br>
+
+
 		<input type="submit" value="Submit" />
 	</form:form>
 </body>

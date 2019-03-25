@@ -3,11 +3,16 @@
 <head>
 
 <link rel="stylesheet" type="text/css"
+
 	href="${pageContext.request.contextPath}/resources/css/my-test.css">
 
 <script
-	src="${pageContext.request.contextPath}/resources/js/simple-test.js"></script>
+	src="${pageContext.request.contextPath}/resources/js/simple-test.js">
+	
+</script>
+
 </head>
+
 <body>
 
 	<h2>Spring MVC Demo - Home Page</h2>
@@ -21,7 +26,7 @@
 	<img
 		src="${pageContext.request.contextPath}/resources/images/spring-logo.png" width="107" height="98" />
 
-	<br>	<br>
+	<br><br>
 
 	<input type="button" onclick="doSomeWork()" value="Click Me" />
 
@@ -31,6 +36,10 @@
 	<br>	<br>
 	
 	<a href="student/showForm"> Student form</a>
+	
+	<br>	<br>
+	
+	<a href="customer/showForm"> Customer form</a>
 	
 </body>
 
