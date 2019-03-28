@@ -31,10 +31,12 @@ public class UpdateStudentDemo {
 			Student myStudent = session.get(Student.class, studentId);
 
 			//delete
-			System.out.println("Deleting student: " +myStudent);
-			session.delete(myStudent);
+//			System.out.println("Deleting student: " +myStudent);
+//			session.delete(myStudent);
 			
-			
+			//delete student id=2
+			System.out.println("delete student id=2");
+			session.createQuery("delete from Student where id=2").executeUpdate();
 			
 			
 			// commit the transaction
