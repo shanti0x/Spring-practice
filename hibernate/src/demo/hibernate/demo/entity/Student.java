@@ -1,11 +1,16 @@
 package demo.hibernate.demo.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import demo.hibernate.demo.DateUtils;
 
 @Entity 
 @Table(name="student") //mapez clasa la un tabel
@@ -23,6 +28,10 @@ public class Student {
 	@Column(name="last_name")
 	private String lastName;
 	
+	 @Column(name="date_of_birth")
+	    @Temporal(TemporalType.DATE)    
+	    private Date dateOfBirth;
+	
 	@Column(name="email")
 	private String email;
 	
@@ -32,10 +41,11 @@ public class Student {
 	}
 
 
-	public Student(String firstName, String lastName, String email) {
+	public Student(String firstName, String lastName, String email, Date theDateOfBirth) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.dateOfBirth = theDateOfBirth;
 		this.email = email;
 	}
 
@@ -80,9 +90,20 @@ public class Student {
 	}
 
 
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Student [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dateOfBirth="
+				+ dateOfBirth + ", email=" + email + "]";
 	}
 
 	

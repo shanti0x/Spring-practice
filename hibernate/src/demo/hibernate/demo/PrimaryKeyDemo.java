@@ -1,5 +1,7 @@
 package demo.hibernate.demo;
 
+import java.util.Date;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,11 +23,25 @@ public class PrimaryKeyDemo {
 				
 				try {
 					// create 3 students object
+					
+					
 					System.out.println("Creating 3 students objects...");
-					Student tempStudent1 = new Student("Maria", "Ilies", "Maria@gmail.com");
-					Student tempStudent2 = new Student("Ion", "Giugean", "Ion@gmail.com");
-					Student tempStudent3 = new Student("Vlad", "Dumitru", "Vlad@gmail.com");
-					Student tempStudent4 = new Student("Maia", "Dumitru", "Maia@gmail.com");
+					
+					String theDateOfBirthStr1 = "12/09/1998";
+			        Date theDateOfBirth1 = DateUtils.parseDate(theDateOfBirthStr1);
+					Student tempStudent1 = new Student("Maria", "Ilies",  "Maria@gmail.com", theDateOfBirth1);
+					
+					String theDateOfBirthStr2 = "15/105/1999";
+			        Date theDateOfBirth2 = DateUtils.parseDate(theDateOfBirthStr2);
+					Student tempStudent2 = new Student("Ion", "Giugean", "Ion@gmail.com", theDateOfBirth2);
+					
+					String theDateOfBirthStr3 = "30/03/1998";
+			        Date theDateOfBirth3 = DateUtils.parseDate(theDateOfBirthStr3);
+					Student tempStudent3 = new Student("Vlad", "Dumitru", "Vlad@gmail.com", theDateOfBirth3);
+					
+					String theDateOfBirthStr4 = "24/08/1998";
+			        Date theDateOfBirth4 = DateUtils.parseDate(theDateOfBirthStr4);
+					Student tempStudent4 = new Student("Maia", "Dumitru", "Maia@gmail.com", theDateOfBirth4);
 					
 					// start a transaction
 					session.beginTransaction();
@@ -39,8 +55,11 @@ public class PrimaryKeyDemo {
 
 					// commit transaction
 					session.getTransaction().commit();
+					
+					
 					System.out.println("Done!");
-
+				 } catch (Exception exc) {
+			            exc.printStackTrace();
 				} finally {
 					factory.close();
 

@@ -22,7 +22,7 @@ public class ReadEmployeePractice {
 		try {
 			
 			System.out.println("Creating new employee object...");
-			Employee tempEmployee = new Employee("Oana", "Mihnea", "sap");
+			Employee tempEmployee = new Employee("Oana", "Mihnea", "SAP");
 			
 
 			// start a transaction
@@ -36,18 +36,18 @@ public class ReadEmployeePractice {
 			// commit transaction
 			session.getTransaction().commit();
 			
-			// find out the student`s id: primary key
-			System.out.println("Saved student. Generate id: " + tempEmployee.getId());
+			// find out the v`s id: primary key
+			System.out.println("Saved employee. Generate id: " + tempEmployee.getId());
 
 			//now get a new session and start transaction
 			session = factory.getCurrentSession();
 			session.beginTransaction();
 
-			// retrieve student based on the id: primary key
-			System.out.println("\nGetting student with id: " + tempEmployee.getId());
-			Employee myStudent = session.get(Employee.class, tempEmployee.getId());
+			// retrieve employee based on the id: primary key
+			System.out.println("\nGetting employee with id: " + tempEmployee.getId());
+			Employee myEmployee = session.get(Employee.class, tempEmployee.getId());
 
-			System.out.println("Get complete: " + myStudent);
+			System.out.println("Get complete: " + myEmployee);
 
 			// commit the transaction
 			session.getTransaction().commit();
