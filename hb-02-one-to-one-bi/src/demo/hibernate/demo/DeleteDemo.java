@@ -12,32 +12,29 @@ import demo.hibernate.demo.entity.InstructorDetail;
 public class DeleteDemo {
 
 	public static void main(String[] args) {
-		
+
 		// create session factory
-		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetail.class)
-				.buildSessionFactory();
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class)
+				.addAnnotatedClass(InstructorDetail.class).buildSessionFactory();
 
 		// create session
 		Session session = factory.getCurrentSession();
-		
+
 		try {
-			        
-			
+
 			// start a transaction
 			session.beginTransaction();
+
 			
-		
-			
+
 			// commit transaction
 			session.getTransaction().commit();
-			
+
 			System.out.println("Done!");
-		 
-		} 
-		finally {
+
+		} finally {
 			factory.close();
 
-		
 		}
 	}
 

@@ -29,7 +29,7 @@ public class InstructorDetail {
 
 	// aduc @OmeToOne annotation
 	
-	@OneToOne(mappedBy="instructorDetail", cascade=CascadeType.ALL) //face referire la prop instructorDetail din clasa Instructor
+	@OneToOne(mappedBy="instructorDetail", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}) //face referire la prop instructorDetail din clasa Instructor
 	private Instructor instructor;
 	
 
