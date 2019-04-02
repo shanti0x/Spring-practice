@@ -24,7 +24,7 @@ public class DeleteInstructorDetailDemo {
 
 			// start a transaction
 			session.beginTransaction();
-			
+
 			// get the instructor detail object
 			int theId = 10;
 			InstructorDetail tempInstructorDetail = session.get(InstructorDetail.class, theId);
@@ -35,30 +35,28 @@ public class DeleteInstructorDetailDemo {
 			// print the associated instructor
 			System.out.println("The associated instructor: " + tempInstructorDetail.getInstructor());
 
-			
-			//delete the instructor detail
+			// delete the instructor detail
 			System.out.println("Deleting tempInstructorDetail: " + tempInstructorDetail);
-			
-			//remove the associated object reference
-			
-			//break bi-directional link
-			
+
+			// remove the associated object reference
+
+			// break bi-directional link
+
 			tempInstructorDetail.getInstructor().setInstructorDetail(null);
-			
+
 			session.delete(tempInstructorDetail);
-			
-			
+
 			// commit transaction
 			session.getTransaction().commit();
 
 			System.out.println("Done!");
 
-		} 
-		catch (Exception exc) {
+		} catch (Exception exc) {
 			exc.printStackTrace();
-		}
-		finally {
-			//handle connection  leak issue
+		} finally {
+
+			// handle connection leak issue
+
 			session.close();
 			factory.close();
 
