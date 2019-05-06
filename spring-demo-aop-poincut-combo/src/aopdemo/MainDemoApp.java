@@ -23,6 +23,8 @@ public class MainDemoApp {
 				Account myAcount = new Account();
 				theAccountDAO.addAccount(myAcount, true);
 				theAccountDAO.doWork();
+				
+				
 				// call the membership business method 
 				theMembershipDAO.addSillyMember();
 				
