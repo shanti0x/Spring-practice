@@ -9,16 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyDemoLoggingAspect {
 
-	@Pointcut("execution(* com.luv2code.aopdemo.dao.*.*(..))")
-	private void forDaoPackage() {}
 	
-	@Before("forDaoPackage()")
+
+	@Before("aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()")
 	public void beforeAddAccountAdvice() {		
 		System.out.println("\n=====>>> Executing @Before advice on method");		
 	}
 	
-	@Before("forDaoPackage()")
-	public void performApiAnalytics() {
-		System.out.println("\n=====>>> Performing API analytics");		
-	}
 }
+
