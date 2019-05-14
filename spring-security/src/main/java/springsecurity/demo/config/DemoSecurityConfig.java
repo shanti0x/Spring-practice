@@ -1,5 +1,8 @@
 package springsecurity.demo.config;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,22 +16,24 @@ import org.springframework.security.core.userdetails.User.UserBuilder;
 @EnableWebSecurity
 public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	//add a reference to our security data source
+	
+	@Autowired
+	private DataSource securityDataSource;
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		// add our user for in memory authentification
 		
 		
-		UserBuilder users = User.withDefaultPasswordEncoder();
+		// use jdbc authentication, ii spun lui Spring Security sa foloseasca autentificarea JDBC cu data source
 		
-		auth.inMemoryAuthentication()
-		.withUser(users.username("Ana").password("test123").roles("EMPLOYEE"))
-		.withUser(users.username("Maria").password("test123").roles("EMPLOYEE", "MANAGER" ))
-		.withUser(users.username("Susan").password("test123").roles("EMPLOYEE", "ADMIN"))
-		.withUser(users.username("Vlad").password("test123").roles("EMPLOYEE"));
+		auth.jdbcAuthentication().dataSource(securityDataSource);
+		
 	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
+		
 		http.authorizeRequests()
 		.antMatchers("/").hasRole("EMPLOYEE")
 		.antMatchers("/leaders/**").hasRole("MANAGER")
